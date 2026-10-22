@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #e6f0fa;
+  color: #222;
+}
+
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+h1 {
+  margin: 0 0 12px;
+}
+
+button {
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* nút đổi °C / °F */
+.unit {
+  margin-bottom: 16px;
+}
+.unit button {
+  padding: 6px 16px;
+  border: 1px solid #2f80ed;
+  background: white;
+  color: #2f80ed;
+}
+.unit button.active {
+  background: #2f80ed;
+  color: white;
+}
+
+/* mặc định (màn hình nhỏ): xếp dọc */
+.layout {
+  display: block;
+}
+
+.cities {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+.city {
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+}
+/* thành phố đang chọn được làm nổi bật */
+.city.active {
+  background: #2f80ed;
+  border-color: #2f80ed;
+  color: white;
+  font-weight: bold;
+}
+
+.box {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.box h2 {
+  margin-top: 0;
+}
+
+.current {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.big-icon {
+  font-size: 4rem;
+}
+.temp {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.day {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-top: 1px solid #eee;
+}
+.day-name {
+  width: 140px;
+}
+
+.message {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+}
+.message button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  background: #2f80ed;
+  color: white;
+}
+
+/* từ 768px trở lên: chia 2 cột */
+@media (min-width: 768px) {
+  .layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+}
+
+/* màn hình rất nhỏ: cho dòng dự báo xuống hàng */
+@media (max-width: 480px) {
+  .day {
+    flex-wrap: wrap;
+  }
+}
